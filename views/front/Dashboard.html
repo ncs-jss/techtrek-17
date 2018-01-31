@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <title>Tech-Trek</title>
+    <!-- Custom styles for this template -->
+    <link href="/css/circle.css" rel="stylesheet">
+    <!-- Latest compiled and minified JavaScript -->
+    <!-- Bootstrap core CSS -->
+    <link href="/css/animate.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/notif.css" rel="stylesheet">
+    <link href="/css/avatar.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/Dashboard.css">
+</head>
+
+<body>
+    </div>
+    <canvas id="world" style="position: absolute;" class="hidden"></canvas>
+    <nav class="navbar trekNav">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-3 col-sm-2">
+                    <label class="avatarBox">
+                        <input type="radio" name="selectAvatar" class="hidden">
+                        <div class="avatar"></div>
+                    </label>
+                </div>
+                <div class="col-xs-7 col-sm-9 col-sm-offset-1">
+                    <div class="navbar-header">
+                        <span class="userName navbar-brand"></span>
+                    </div>
+                </div>
+                <div class="col-xs-2 col-sm-0">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <img src="/img/Dropdown.png">
+                    </button>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right" aria-labelledby="dropdownMenu1">
+                    <li><a href="/rules">Rules</a></li>
+                    <li class="active"><a href="/">Dashboard</a></li>
+                    <li><a href="/leader">LeaderBoard</a></li>
+                    <li><a href="https://www.facebook.com/nibblecomputersociety/" target="_blank">Forum</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                    <li onclick="mute()">
+                        <a><img style="margin: 0;height: 20px;width: auto;" src="/img/speaker.png" class="toggleAudio"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div style="clear:both;"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-6 animated fadeInUp">
+                <h4 style="color: #f58974;margin-left: 10px;">Question</h4>
+                <div class="ques">
+                    <p>Loading Question ... Hold Your Horses !</p>
+                </div>
+                <div class="row">
+                    <div class="ans col-md-8">
+                        <input type="text" placeholder="I Seek an Answer ">
+                    </div>
+                    <div class="col-md-4 submit_btn">
+                        <button>Check</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 notifBox">
+                        <div class="notif notif-error hidden">
+                        </div>
+                        <div class="notif notif-correct hidden">
+                            <strong> My Dear Holmes </strong> ! You're Right.
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 text-center hidden">
+                        <img src="/img/graphics-fireworks-158568.gif" class="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-5 col-md-offset-1 animated">
+                <div class=" levelIndicatorBox">
+                    <div class="row">
+                        <div class="col-xs-12 j-center">
+                            <div id="circle-1" class="levelIndicator" data-circle-fontSize="35px" data-circle-size="155px" data-circle-dialWidth=14 data-circle-skin="white">
+                                <div class="loader-bg">
+                                    <div class="text">0</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="levelText">
+                                <span class="level">Level <strong> 5 </strong> - </span>
+                                <span class="score">Score <strong>5</strong></span>
+                                <hr>
+                                <h1 style="margin-bottom: 15px;">Achievements</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row badgesBox text-center">
+                            <div class="col-xs-4 badges" data-toggle="tooltip" data-title="Locked">
+                                <img src="/img/Badge.png">
+                                <p>Badge-1</p>
+                            </div>
+                            <div class="col-xs-4 badges" data-toggle="tooltip" data-title="Locked">
+                                <img src="/img/Badge.png">
+                                <p>Badge-2</p>
+                            </div>
+                            <div class="col-xs-4 badges" data-toggle="tooltip" data-title="Locked">
+                                <img src="/img/Badge.png">
+                                <p>Badge-3</p>
+                            </div>
+                        </div>
+                        <div class="row badgesBox text-center">
+                            <div class="col-xs-4 badges" data-toggle="tooltip" data-title="Locked">
+                                <img src="/img/Badge.png">
+                                <p>Badge-4</p>
+                            </div>
+                            <div class="col-xs-4 badges" data-toggle="tooltip" data-title="Locked">
+                                <img src="/img/Badge.png">
+                                <p>Badge-5</p>
+                            </div>
+                            <div class="col-xs-4 badges" data-toggle="tooltip" data-title="Locked">
+                                <img src="/img/Badge.png">
+                                <p>Badge-6</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--
+    <footer class="footer techtrekFooter">
+        <div class="container">
+            <span class="footerText pull-left">Developed By <a target="_blank" href="http://hackncs.com"><strong>Nibble Computer Society</strong></a></span>
+        </div>
+    </footer>
+    -->
+    <audio id="correct" src="/sounds/winner.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="audio" autoplay="true" loop="true" src="/sounds/gameplaymin.mp3" type="audio/mpeg">
+    </audio>
+    <script src="/js/Dashboard.js"></script>
+    <script src="/js/circle.js"></script>
+    <script src="/js/confetti.js"></script>
+    <script>
+    $(document).ready(function() {
+        $("#audio")[0].load();
+        $("#audio")[0].play();
+        $("#audio")[0].volume = 0.6;
+    });
+
+    function mute() {
+        if ($('#audio')[0].muted) {
+            $('#audio')[0].muted = false;
+            $(".toggleAudio").attr("src", "/img/speaker.png");
+        } else {
+            $('#audio')[0].muted = true;
+            $(".toggleAudio").attr("src", "/img/mute.png");
+        }
+    }
+    </script>
+</body>
+
+</html>

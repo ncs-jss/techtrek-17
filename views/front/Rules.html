@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <title>Rules</title>
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/css/avatar.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/rule.css" rel="stylesheet">
+    <!--animation -->
+    <link href="/css/animate.min.css" rel="stylesheet">
+</head>
+<!--Body starts-->
+
+<body>
+    <nav class="navbar trekNav">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-3 col-sm-2">
+                    <label class="avatarBox">
+                        <input type="radio" name="selectAvatar" class="hidden">
+                        <div class="avatar"></div>
+                    </label>
+                </div>
+                <div class="col-xs-7 col-sm-9 col-sm-offset-1">
+                    <div class="navbar-header">
+                        <span class="userName navbar-brand"></span>
+                    </div>
+                </div>
+                <div class="col-xs-2 col-sm-0">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <img src="/img/Dropdown.png">
+                    </button>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right" aria-labelledby="dropdownMenu1">
+                    <li class="active"><a href="/rules">Rules</a></li>
+                    <li><a href="/">Dashboard</a></li>
+                    <li><a href="/leader">LeaderBoard</a></li>
+                    <li><a href="https://www.facebook.com/nibblecomputersociety/" target="_blank">Forum</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- rules contents starts here-->
+    <div class="container">
+        <h1 class="pageheading text-center">Rules</h1>
+        <div>
+            <div class="row overlay_anime hidden-xs">
+                <div class="col-md-3 col-md-offset-9 animated slideInRight">
+                    <img src="img/planets.png" class="img-responsive">
+                </div>
+                <div class="col-md-12 col-md-offset-0">
+                    <img src="img/meteor.png" class="animated slideInLeft" style="margin-bottom:40px;">
+                </div>
+            </div>
+            <div class="well box animated fadeInUp">
+                <ul class="Pad_m">
+                    <li>This is an ONLINE event which will be live from 17 Oct 2016 and will last for three days (17 Oct 2016 to 19 Oct 2016).</li>
+                    <li>Each question will bring you closer to your destination.</li>
+                    <li>Each level will take you to the two paths. One of which is going to be the technical one and other is the non-technical one.</li>
+                    <li>The TECHNICAL answer will earn you 10 points and the NON-TECHNICAL answer will earn you 5 points.</li>
+                    <li>Some questions will test your luck where you have to choose 1 of the 3 planets.You will win Special badges if you answer them correctly.</li>
+                    <li>The answers are to be written <strong> only in lowercase </strong>. Special symbols, numerics and spaces are not allowed.Example : If an answer is "christopher nolan" submit it as "christophernolan" without any special character.</li>
+                    <li>No backtracking is allowed i.e If your answer is accepted for a particular question  then you cannot revert back to the same question again.</li>
+                    <li>The HINTS to each level will be disclosed on the FORUM of *facebook* page of NIBBLE COMPUTER SOCIETY.(  Please do not message personally on the page or anybody related to NCS regarding hints. Every possible hint for each level will be displayed on the page itself.)</li>
+                    <li> In case of any discrepancy, the judgement of Nibble Computer Society will be the final .</li>
+                    <li>The winner will be announced on the Facebook page and on the Infoconnect as well, after the game terminates.</li>
+                    <li class="hidden"> In recognition of an outstanding achievement, the winners will be rewarded with exciting goodies  and the winners of first and second years will also be given a  chance to sit directly in the second round of the NCS recruitment session.</li>
+                </ul>
+            </div>
+            <!-- rule contents ends here-->
+        </div>
+    </div>
+    <footer class="footer techtrekFooter">
+        <div class="container">
+            <span class="footerText pull-left"><strong>&#9400; Nibble Computer Society</strong></span>
+        </div>
+    </footer>
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $.get("/user", function(data) {
+            userdata = data;
+            $(".userName").html(userdata.name);
+            $(".avatarBox input").val(userdata.avatar);
+        });
+    });
+    </script>
+</body>
+
+</html>

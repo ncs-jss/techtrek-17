@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <title>Tech-Trek|Login-Signup</title>
+    <!-- Bootstrap core CSS -->
+    <link href="/css/animate.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <link href="/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="/css/notif.css" rel="stylesheet">
+    <link href="/css/avatar.css" rel="stylesheet">
+    <link href="/css/login.css" rel="stylesheet">
+    <style>
+    input {
+        font-family: 'Lato', sans-serif !important;
+    }
+    
+    body {
+        overflow-x: hidden;
+    }
+    
+    .techtrekFooter {
+        margin-top: 30px;
+        padding: 20px 0;
+        /*margin-left: -15px;*/
+        /*margin-right: -15px;*/
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        /*background: rgba(0, 0, 0, 0.2);*/
+        background: black;
+    }
+    
+    .footerText {
+        vertical-align: middle;
+        color: #fff;
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .footerText a{
+        text-decoration: none;
+    }
+    .footerText:nth-child(2) strong{
+        color: #662a68;
+    }
+    
+    .footerText strong {
+        color: #f58974;
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .xsflexBox {
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0;
+        width: 100%;
+    }
+    
+    @media screen and (max-width:400px) {
+        .footerText {
+            font-size: 10px;
+        }
+        .footerText:nth-child(2) {
+            float: left !important;
+        }
+        .footerText strong {
+            font-size: 12px;
+        }
+    }
+    </style>
+</head>
+<!-- body starts-->
+
+<body class="loginbody">
+    <!-- Element styling starts here-->
+    <div class="container xsflexBox">
+        <div class="row pos-top">
+            <div class="col-sm-12 col-md-2">
+                <a href="/"><img src="/img/ttlogo_new.png" class="animated bounceIn" style="padding-top:10px; float: right;"></a>
+            </div>
+        </div>
+        <div class="row hidden-xs">
+            <div class="col-sm-12 col-md-3 col-md-offset-9 animated slideInRight">
+                <img src="/img/planets.png" class="img-responsive">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-7 col-md-offset-5 ">
+                <a href="#" data-toggle="modal" data-target="#signupmodal" class="checkModal1"><img src="/img/signup.png" style="text-align:center;height:70px; width:200px;"></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 hidden-xs">
+                <img src="/img/meteor.png" class="animated slideInLeft" style="margin-bottom:40px;">
+            </div>
+            <div class="col-md-3 col-md-offset-1">
+                <a href="#" data-toggle="modal" data-target="#loginmodal" class="checkModal2"><img src="/img/login.png" style="margin-top:15px;margin-bottom:30px ;height:70px; width:200px;"></a>
+            </div>
+            <div class="col-md-3 col-md-offset-2 hidden-xs">
+                <img class="animated bounceIn" src="/img/astronaut.png" style="margin-top:50px">
+            </div>
+        </div>
+        <footer class="footer techtrekFooter">
+            <div class="container">
+                <span class="footerText pull-left">Developed By <a target="_blank" href="http://hackncs.com"><strong>Nibble Computer Society</strong></a></span>
+                <span class="footerText pull-right">Alumni's & Faculty, visit :<a target="_blank" href="https://www.facebook.com/nibblecomputersociety"><strong>Forum</strong></a> for trekking</span>
+            </div>
+        </footer>
+    </div>
+    <!-- elements styling ends here-->
+    <!--Modal for signup starts here-->
+    <div class="modal fade" id="signupmodal">
+        <div class="modal-dialog transparentModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 id="Form" class="modal-title">Signup</h2>
+                    <!-- <h4 class="modal-title">Modal Header</h4> -->
+                </div>
+                <div id="container_ls" class="container">
+                    <br>
+                    <form class="form-horizontal">
+                        <div class="form-group margin0 simpleForm">
+                            <div class="row margin0">
+                                <!--                                 <div class="col-xs-12 col-sm-5 col-sm-offset-0">
+                                    <label><input type="radio" name="selectAvatar" class="form-control" class="selectAvatar" /></label>
+                                </div> -->
+                                <div class="avatarContainer" data-toggle="tooltip" title="Scroll For More Avatars" data-placement="top">
+                                    <div class="col-xs-12">
+                                        <label>
+                                            <input type="radio" name="selectAvatar" value="0" checked>
+                                            <div class="avatar"></div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="selectAvatar" value="1">
+                                            <div class="avatar"></div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="selectAvatar" value="2">
+                                            <div class="avatar"></div>
+                                        </label>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <label>
+                                            <input type="radio" name="selectAvatar" value="3">
+                                            <div class="avatar"></div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="selectAvatar" value="4">
+                                            <div class="avatar"></div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="selectAvatar" value="5">
+                                            <div class="avatar"></div>
+                                        </label>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <label>
+                                            <input type="radio" name="selectAvatar" value="6">
+                                            <div class="avatar"></div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="selectAvatar" value="7">
+                                            <div class="avatar"></div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="selectAvatar" value="8">
+                                            <div class="avatar"></div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-5 col-sm-offset-0">
+                                    <label id="nameLabel" class="errorShow"></label>
+                                    <input placeholder="Name" type="username" name="name" class="form-control" id="name" />
+                                </div>
+                                <div class="col-xs-12 col-sm-5 col-sm-offset-1">
+                                    <label id="yearLabel" class="errorShow"></label>
+                                    <input placeholder="Year" type="number" min="0" max="4" name="year" class="form-control" id="year" />
+                                </div>
+                                <div class="col-xs-11" data-toggle="tooltip" title="is alphanumeric!" data-placement="left">
+                                    <label id="referenceLabel" class="errorShow"></label>
+                                    <input placeholder="Reference No." pattern="[a-zA-Z0-9]{40}" type="text" name="referenceNo" class="form-control" id="referenceNo" />
+                                </div>
+                                <div class="col-xs-12 col-sm-5 col-sm-offset-0 icon-cont" data-toggle="tooltip" title="Must be Cool" data-placement="left">
+                                    <label id="passLabelRegister" class="errorShow"></label>
+                                    <input placeholder="Password" type="password" name="password" class="form-control" id="password" />
+                                    <span class="visibilityToggle">
+                                        <span class="fa fa-eye"></span>
+                                    <span class="fa fa-eye-slash hidden"></span>
+                                    </span>
+                                </div>
+                                <div class="col-xs-12 col-sm-5 col-sm-offset-1" data-toggle="tooltip" title="Must be matching" data-placement="right">
+                                    <label id="passLabelConfirm" class="errorShow"></label>
+                                    <input placeholder="Confirm Password" type="password" name="cpassword" class="form-control" id="cpassword" />
+                                </div>
+                                <div class="col-xs-12 col-sm-5 col-sm-offset-0" data-toggle="tooltip" title="is of 10 digits" data-placement="left">
+                                    <label id="mobLabel" class="errorShow"></label>
+                                    <input placeholder="Mobile" type="text" name="mob" class="form-control" id="mob" />
+                                </div>
+                                <div class="col-xs-12 col-sm-5 col-sm-offset-1">
+                                    <label id="emailLabel" class="errorShow"></label>
+                                    <input placeholder="Email" type="email" name="email" class="form-control" id="email" />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="row modal-footer">
+                        <div class="col-xs-12 col-sm-8 notifBox">
+                            <div class="notif notif-error hidden">
+                                <strong>Something's Wrong</strong> , Trekker !.
+                            </div>
+                            <div class="notif notif-correct hidden">
+                                <strong>Welcome ! </strong> to Tech-Trek.
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                            <button name="submit" id="submit" class="btn btn-default">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for signup ends here-->
+    <!-- Modal for login starts here-->
+    <div class="modal fade" id="loginmodal">
+        <div class="modal-dialog transparentModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 id="Form" class="modal-title">Login</h2>
+                    <!-- <h4 class="modal-title">Modal Header</h4> -->
+                </div>
+                <div id="container_ls" class="container">
+                    <br>
+                    <form class="form-horizontal">
+                        <div class="form-group margin0 simpleForm">
+                            <div class="row margin0">
+                                <div class="col-xs-12 col-sm-5 col-sm-offset-1">
+                                    <label id="emailOrNumberLabel" class="errorShow"></label>
+                                    <input placeholder="Email or Mobile No." type="email" name="emailOrNumber" class="form-control" id="emailOrNumber" />
+                                </div>
+                                <div class="col-xs-12 col-sm-5 col-sm-offset-0 icon-cont">
+                                    <label id="passLoginLabel" class="errorShow"></label>
+                                    <input placeholder="Password" type="password" name="pass" class="form-control" id="pass" />
+                                    <span class="visibilityToggle">
+                                        <span class="fa fa-eye"></span>
+                                    <span class="fa fa-eye-slash hidden"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="row modal-footer">
+                        <div class="col-xs-12 col-sm-8 notifBox">
+                            <div class="notif notif-error hidden">
+                                <strong>Something's Wrong </strong> , Trekker !.
+                            </div>
+                            <div class="notif notif-correct hidden">
+                                <strong>Welcome ! </strong> to Tech-Trek.
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                            <button name="submit" id="login" class="btn btn-default">Login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for login ends here-->
+    <script type="text/javascript" src="/js/login.js"></script>
+    <script type="text/javascript" src="/js/login_validate.js"></script>
+    <script type="text/javascript" src="/js/register_validate.js"></script>
+</body>
+
+</html>
