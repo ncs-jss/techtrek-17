@@ -1,3 +1,4 @@
+require('dotenv').config();
 var express = require('express');
 var router =  express.Router();
 var questionAssigned = require('../Models/questionAssigned.js');
@@ -9,9 +10,13 @@ var crypto = require('crypto');
 router.post('/checkAnswer', function(req, res) {
 	if(req.session.email && req.session.level) {
 		//console.log("hash of abcd " +crypto.createHash('md5').update('abcd').digest('hex'));
-		
-		// var answerByUser = crypto.createHash('md5').update(req.body.answer).digest('hex');
-		var answerByUser = req.body.answer;
+                var answerByUser = "";
+
+                if(process.env.HASH === 'YES') {
+                    answerByUser = crypto.createHash('md5').update(req.body.answer).digest('hex');
+                } else {
+		    answerByUser = req.body.answer;
+		}
 		var badgesCouldBeWon = false ;
 		questionAssigned.findOne({user_ID : req.session.email, duration : {$exists: false}})
 		.sort({level : -1})
@@ -20,12 +25,12 @@ router.post('/checkAnswer', function(req, res) {
 			if(err)
 				return console.log(err);
 			if(result) {
-				console.log('the result is' + result );
+				//console.log('the result is' + result );
 				if(answerByUser) {
-					console.log("the answercoming from req is "+ answerByUser);
-					console.log('the TechnicalAnswer answer is'+ result.question_ID.technicalAnswer )
-					console.log('the nonTechnicalAnswer answer is'+ result.question_ID.nonTechnicalAnswer )
-					console.log('now lets have this ' + (answerByUser == result.question_ID.technicalAnswer));
+					//console.log("the answercoming from req is "+ answerByUser);
+					//console.log('the TechnicalAnswer answer is'+ result.question_ID.technicalAnswer )
+					//console.log('the nonTechnicalAnswer answer is'+ result.question_ID.nonTechnicalAnswer )
+					//console.log('now lets have this ' + (answerByUser == result.question_ID.technicalAnswer));
 
 					if((answerByUser == result.question_ID.technicalAnswer )||(answerByUser ==  result.question_ID.nonTechnicalAnswer)){
 						var badgeWon = false;
