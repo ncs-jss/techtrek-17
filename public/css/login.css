@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: "LemonMilk";
-    src: url('../fonts/LemonMilk.otf');
+    src: url('../fonts/Gilroy-ExtraBold.otf');
 }
 .homebody {
     background-image: url('../img/Techtrek.jpg');
@@ -88,7 +88,7 @@ a {
     font-style: bold;
     font-size: 3em;
     /*color: #180f36;*/
-    color: #fff;
+    color: #fade20;
     padding-left: 4%;
 }
 
@@ -103,8 +103,8 @@ label {
 }
 
 #submit {
-    background-color: #403469;
-    color: #fff;
+    background-color: #fade20;
+    color: black;
 }
 
 #submit:hover {

@@ -16,7 +16,7 @@ body {
 @import 'https://fonts.googleapis.com/css?family=Lato';
 @font-face {
     font-family: 'Milk';
-    src: url('../fonts/LemonMilk.otf');
+    src: url('../fonts/Gilroy-ExtraBold.otf');
 }
 input {
     font-family: 'Lato', sans-serif !important;
@@ -33,7 +33,7 @@ a:hover {
 
 li a {
     font-family: Milk;
-    color: #ffae7e;
+    color: #fade20;
     font-size: 20px;
     padding-left: 10px;
     letter-spacing: 1px;
@@ -60,7 +60,7 @@ li a {
 .masthead-nav > .active > a,
 .masthead-nav > .active > a:hover,
 .masthead-nav > .active > a:focus {
-    color: #ffae7e;
+    color: #fade20;
     border-bottom-color: #faa065;
 }
 
@@ -85,7 +85,7 @@ a{
     font-size: 14px;
 }
 .footerText strong{
-    color: #f58974;
+    color: #fade20;
     font-size: 16px;
 }
 /************ super extra small devies only***/
@@ -261,10 +261,11 @@ a{
 }
 
 .userName {
-    color: #f58974;
+    color: #fade20;
     float: left;
+    padding-top: 25px;
     padding-left: 19px;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 .trekNav li a {

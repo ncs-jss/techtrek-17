@@ -32,7 +32,7 @@ body {
 
 .badgesBox p {
     margin: 5px 12px 10px;
-    color: #6D1262;
+    color: #fade20;
     text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
 
 }
@@ -51,18 +51,18 @@ body {
 
 .levelIndicator .text {
     font-size: 20px;
-    color: #f58974 !important;
+    color: #fade20 !important;
 }
 
 .levelIndicator .loader-spinner {
     /*  border-color: #4c68a6;*/
-    border-color: #f58974;
+    border-color: #fade20;
 }
 
 .levelText {
     font-size: 45px;
     text-align: center;
-    color: #f58974;
+    color: #fade20;
 }
 .levelText span{
     font-size: 24px;
@@ -100,7 +100,7 @@ h1 {
     padding: 17px 15px;
     margin-top: 20px;
     border: none;
-    color: #f58974;
+    color: #fade20;
     border-radius: 4px;
     width: 100%;
     -webkit-transition: .6s;
@@ -108,14 +108,14 @@ h1 {
 }
 
 .ans input:focus {
-    background: #fff;
+    background: rgba(0, 0, 0, 0.3);
     border: none;
-    color: #333;
+    color: #fade20;
     outline: none;
 }
 
 .submit_btn button {
-    background: #f58974;
+    background: #373738;
     padding: 12px 15px;
     margin-top: 20px;
     border: none;
@@ -125,7 +125,17 @@ h1 {
     width: 100%;
     margin-bottom: 40px;
 }
-
+.submit_btn button:hover {
+    background: #373738;
+    padding: 12px 15px;
+    margin-top: 20px;
+    border: none;
+    color: #fade20;
+    border-radius: 4px;
+    font-size: 20px;
+    width: 100%;
+    margin-bottom: 40px;
+}
 .custom-dropbtn {
     margin-right: 30px;
 }
@@ -171,7 +181,7 @@ h1 {
         font-size: 13px;
     }
     .submit_btn button {
-        background: #f58974;
+        background: #fade20;
         padding: 12px 8px;
         font-size: 12px;
         margin-bottom: 20px;

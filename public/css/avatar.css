@@ -8,12 +8,12 @@
 }
 .avatarContainer::-webkit-scrollbar {
     width: 8px;
-    background: #391847;
+    background: #373738;
 
 }
 .avatarContainer::-webkit-scrollbar-thumb{
     width: 8px;
-    background: #f58974;
+    background: #fade20;
 
 }
 .avatarContainer>div{
@@ -64,15 +64,7 @@ input[value="4"]+.avatar{
 input[value="5"]+.avatar{
     background-image: url("../img/avatars/5.png");
 }
-input[value="6"]+.avatar{
-    background-image: url("../img/avatars/6.png");
-}
-input[value="7"]+.avatar{
-    background-image: url("../img/avatars/7.png");
-}
-input[value="8"]+.avatar{
-    background-image: url("../img/avatars/8.png");
-}
+
 
 /************Extra small devices only*********/
 
