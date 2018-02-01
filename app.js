@@ -1,3 +1,4 @@
+require('dotenv').config();
 var express = require('express');
 var session = require('express-session');
 var path = require('path');
@@ -19,13 +20,11 @@ var QuestionAssigned = require('./Models/questionAssigned.js');
 var Reference = require('./Models/reference.js');
 var User = require('./Models/userInfo.js');
 
-
-// var uristring = 'mongodb://localhost/first';
-var uristring = 'mongodb://adi:adi@ds121268.mlab.com:21268/techtrek'
-var mongoOptions = { db: { safe: true } };
+var uristring = process.env.URI || 'mongodb://localhost/first';
+// var mongoOptions = { db: { safe: true }};
 
 // Connect to Database
-mongoose.connect(uristring, mongoOptions, function(err, res) {
+mongoose.connect(uristring, { useMongoClient: true }, function(err, res) {
     if (err) {
         console.log('ERROR connecting to: remote' + uristring + '. ' + err);
     } else {
@@ -86,7 +85,9 @@ app.use(session({
     secret: '57eac3e1d6a4cc1134578440',
     store: new MongoStore({
         mongooseConnection: mongoose.connection//
-    })
+    }),
+saveUninitialized: true,
+resave: true
 }));
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -227,11 +228,11 @@ app.get('/referenceAdmin', referenceAdmin);
 
 app.get('/studentProfile',studentProfile);
 
-app.get('/logout', logout)
+app.get('/logout', logout);
 
-
-app.listen(process.env.PORT||8895, function() {
-    console.log("server listening at port 8895");
+var port = process.env.PORT || 3000;
+app.listen(port, function() {
+    console.log("server listening at port" + port);
 });
 
 module.exports = app;
