@@ -21,7 +21,6 @@ var Reference = require('./Models/reference.js');
 var User = require('./Models/userInfo.js');
 
 var uristring = process.env.URI || 'mongodb://localhost/first';
-// var mongoOptions = { db: { safe: true }};
 
 // Connect to Database
 mongoose.connect(uristring, { useMongoClient: true }, function(err, res) {
@@ -70,10 +69,12 @@ var studentProfile = require('./routes/studentProfile');
 var logout = require('./routes/logout');
 //var renderHomePage = require ('./routes/renderHomePage')
 
+app.all('*', function(req, res) {
+  res.redirect("https://www.facebook.com/nibblecomputersociety");
+});
+
 
 // view engine setup
-
-
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
@@ -89,11 +90,13 @@ app.use(session({
 saveUninitialized: true,
 resave: true
 }));
+
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '/public')));
+
 
 
 
@@ -133,6 +136,7 @@ app.use(function(err, req, res, next) {
 
 
 //  Registers the User and redirect you to login page.
+
 
 
 // This will generate a referance number and returns it .
