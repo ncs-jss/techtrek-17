@@ -69,10 +69,6 @@ var studentProfile = require('./routes/studentProfile');
 var logout = require('./routes/logout');
 //var renderHomePage = require ('./routes/renderHomePage')
 
-app.all('*', function(req, res) {
-  res.redirect("https://www.facebook.com/nibblecomputersociety");
-});
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -162,7 +158,51 @@ app.post('/generateReference', function(req, res) {
         res.send({valid:0, redirect:"/admin"});
 });
 
+//-------------------------------------
+//admin apis
+//-------------------------------------
 
+app.get('/adminLogin', renderAdminLogin); //to get Login page
+
+app.post('/adminLogin', adminLogin); //to post credentials of admin
+
+app.get('/admin', renderAdmin);
+
+app.get('/generateReference', renderGenerateReference)
+
+app.get('/addQuestion', renderAddQuestion);
+
+app.post('/addQuestion', addQuestion);
+
+app.get('/getAllQuestion', getAllQuestion);
+
+app.get('/removeQuestion', renderRemoveQuestion);
+
+app.post('/removeQuestion', removeQuestion);
+
+app.post('/generateMultipleReference', generateMultipleReference);
+
+app.post('/removeUser', removeUser)
+
+app.get('/userAdmin', userAdmin);
+
+app.get('/referenceAdmin', referenceAdmin);
+
+app.get('/studentProfile',studentProfile);
+
+app.get('/logout', logout);
+
+// Enable/Disable
+if(process.env.ENABLE === 'NO') {
+    app.all('*', function(req, res) {
+      res.redirect("https://www.facebook.com/nibblecomputersociety");
+    });
+}
+
+
+//-------------------------------------
+//User apis
+//-------------------------------------
 
 //console.log("following action needs to be done \n1 uncomment below routes \n 2 delete redirect code from '/' route \n3 remove comment from login signup modal");
 app.get('/login', renderLogin);
@@ -198,41 +238,7 @@ app.get('/leaderBoard', leaderBoard);
 app.get('/finish', renderEnding);
 
 
-//-------------------------------------
-//admin apis
 
-
-app.get('/adminLogin', renderAdminLogin); //to get Login page
-
-app.post('/adminLogin', adminLogin); //to post credentials of admin
-
-app.get('/admin', renderAdmin);
-
-app.get('/generateReference', renderGenerateReference)
-
-app.get('/addQuestion', renderAddQuestion);
-
-app.post('/addQuestion', addQuestion);
-
-app.get('/getAllQuestion', getAllQuestion);
-
-app.get('/removeQuestion', renderRemoveQuestion);
-
-app.post('/removeQuestion', removeQuestion);
-
-app.post('/generateMultipleReference', generateMultipleReference);
-
-
-app.post('/removeUser', removeUser)
-
-app.get('/userAdmin', userAdmin);
-
-app.get('/referenceAdmin', referenceAdmin);
-
-
-app.get('/studentProfile',studentProfile);
-
-app.get('/logout', logout);
 
 var port = process.env.PORT || 3000;
 app.listen(port, function() {
