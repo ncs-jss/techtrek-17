@@ -55,6 +55,7 @@ var renderAdminLogin = require('./routes/renderAdminLogin');
 var adminLogin = require('./routes/adminLogin');
 var renderAdmin = require('./routes/admin');
 var getAllQuestion = require('./routes/getAllQuestion');
+var levelStats = require('./routes/levelStats');
 var renderAddQuestion = require('./routes/renderAddQuestion');
 var addQuestion = require('./routes/addQuestion');
 var renderRemoveQuestion = require('./routes/renderRemoveQuestion');
@@ -175,6 +176,8 @@ app.get('/addQuestion', renderAddQuestion);
 app.post('/addQuestion', addQuestion);
 
 app.get('/getAllQuestion', getAllQuestion);
+
+app.get('/levelStats', levelStats);
 
 app.get('/removeQuestion', renderRemoveQuestion);
 
