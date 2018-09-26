@@ -3,7 +3,6 @@ var Schema = mongoose.Schema
 var ObjectID =  Schema.Types.ObjectId;
 
 var userInfoSchema = new Schema({
-	'referenceNumber' : { type : String, unique : true, required : true },
 	'email_ID' : { type : String, unique : true,  required : true },
 	'password' : { type : String,  required : true },
 	'name' : String,
@@ -15,7 +14,8 @@ var userInfoSchema = new Schema({
 	//'questionAssigned' : [{ type : ObjectID , ref: questionAssigned }],
 	'date' :  { type : Date, default : Date.now },
 	'lastAttemptTime' : { type :Date },
-	'badges' : []
+	'badges' : [],
+	'paidStatus':{type:Boolean,default:false}
 
 });
 

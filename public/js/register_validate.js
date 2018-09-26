@@ -1,6 +1,6 @@
 var valName = 1;
 var valEmail = 1;
-var valUser = 1;
+var valUser = 0;
 var valMob = 1;
 var valpassword = 1;
 var valcpassword = 1;
@@ -10,7 +10,7 @@ var signup = {};
 function initRegister() {
     name();
     email();
-    referenceNo();
+    // referenceNo();
     mob();
     passwordRegister();
     passwordConfirm();
@@ -36,9 +36,9 @@ $("#email").blur(function() {
 
 // referenceNo validation
 
-$("#referenceNo").blur(function() {
-    referenceNo();
-});
+// $("#referenceNo").blur(function() {
+//     referenceNo();
+// });
 
 // Mobile validation
 
@@ -64,14 +64,20 @@ $("#year").blur(function() {
 $("#submit").click(function() {
     var name = $("#name").val();
     var email = $("#email").val();
-    var referenceNo = $("#referenceNo").val();
+    // var referenceNo = $("#referenceNo").val();
     var mob = $("#mob").val();
     var password = $("#password").val();
     var cpassword = $("#cpassword").val();
     var year = $("#year").val();
 
     initRegister();
-
+    console.log(valName);
+    console.log(valEmail);
+    console.log(valUser);
+    console.log(valMob);
+    console.log(valpassword);
+    console.log(valcpassword);
+    console.log(valyear);
     if (valName == 0 && valEmail == 0 && valUser == 0 && valMob == 0 && valpassword == 0 && valcpassword == 0 && valyear == 0) {
         signup.email = email;
         signup.mobileNumber = mob;
@@ -79,7 +85,7 @@ $("#submit").click(function() {
         signup.avatar = parseInt($(".avatarContainer input:checked").val());
         signup.name = name;
         signup.year = year;
-        signup.referenceNo = referenceNo;
+        // signup.referenceNo = referenceNo;
         // console.log(signup);
 
         $.post("/register", signup,
@@ -113,12 +119,12 @@ function showEmailError(txt) {
     $("#emailLabel").append(txt1);
 }
 
-function showReferenceError(txt) {
-    $("#referenceLabel span").remove("span");
-    $("#referenceNo").css({ "outline": "none", "border-color": "red" });
-    var txt1 = $("<span></span>").text(txt).css({ 'font-size': '8px', 'color': 'red', 'display': 'inline-block', "padding": "5px" });
-    $("#referenceLabel").append(txt1);
-}
+// function showReferenceError(txt) {
+//     $("#referenceLabel span").remove("span");
+//     $("#referenceNo").css({ "outline": "none", "border-color": "red" });
+//     var txt1 = $("<span></span>").text(txt).css({ 'font-size': '8px', 'color': 'red', 'display': 'inline-block', "padding": "5px" });
+//     $("#referenceLabel").append(txt1);
+// }
 
 function showMobError(txt) {
     $("#mobLabel span").remove("span");
@@ -177,22 +183,22 @@ function email() {
     }
 }
 
-function referenceNo() {
-    var val = $("#referenceNo").val();
-    var re = /^\S+@/;
+// function referenceNo() {
+//     var val = $("#referenceNo").val();
+//     var re = /^\S+@/;
 
-    $("#referenceLabel span").remove("span");
-    if (val == "") {
-        valUser = 1;
-        showReferenceError(" *Enter Your referenceNo");
-    } else if (re.test(val)) {
-        valUser = 1;
-        showReferenceError(" *Invalid referenceNo");
-    } else {
-        $("#referenceNo").css({ "outline": "none", "border-color": "white" });
-        valUser = 0;
-    }
-}
+//     $("#referenceLabel span").remove("span");
+//     if (val == "") {
+//         valUser = 1;
+//         showReferenceError(" *Enter Your referenceNo");
+//     } else if (re.test(val)) {
+//         valUser = 1;
+//         showReferenceError(" *Invalid referenceNo");
+//     } else {
+//         $("#referenceNo").css({ "outline": "none", "border-color": "white" });
+//         valUser = 0;
+//     }
+// }
 
 function mob() {
     var mob = $("#mob").val();

@@ -21,10 +21,16 @@ router.post('/login', function(req, res, next) {
         if (result)
            {
             if (result.password == password) {
-                req.session.email = result.email_ID;
-                req.session.level = result.level;
+                if(result.paidStatus==true){
+                    req.session.email = result.email_ID;
+                    req.session.level = result.level;
 
-                return res.send({ 'valid': 1, 'redirect': '/' });
+                    return res.send({ 'valid': 1, 'redirect': '/' });    
+                }
+                else{
+                    return res.send({valid : 0, comment : "Payment not made", type:"payment"});
+                }
+                
             }
             else
               return res.send({valid : 0, comment : "*Incorrect password", type:"pass"});
