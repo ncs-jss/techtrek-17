@@ -40,7 +40,7 @@ $(document).ready(function() {
     function showReceipts(receiptData) {
         if (receiptData.valid == 1) {
             $.each(receiptData.data, function(key, value) {
-                var html = '<div class="i-card"><div class="content"><p>Trek-Reg-ID : <strong>' + value.trekreg_ID + '</strong></p><p>Email : <strong>' + value.email_ID + '</strong></p><p>Reference Id : <strong>' + value.referenceNumber + '</strong></p></div><div class="logo"><img src="/img/ttlogo_new.png"><p style="flex-basis:100%;font-size:9px;margin:5px 0"><strong>NCS</strong><br>techtrek.hackncs.com</p><p>Fee : <strong>Rs. 20/- Paid.</strong></p></div></div>';
+                var html = '<div class="i-card"><div class="content"><p>Reference Id : <strong>' + value.referenceNumber + '</strong></p></div><div class="logo"><img src="/img/ttlogo_new.png"><p style="flex-basis:100%;font-size:9px;margin:5px 0"><strong>NCS</strong><br>techtrek.hackncs.com</p><p>Fee : <strong>Rs. 20/- Paid.</strong></p></div></div>';
                 $(".receipt-container").append(html);
             });
         }
@@ -49,9 +49,8 @@ $(document).ready(function() {
     }
 
     function fetchId(data) {
-        data = JSON.stringify(data);
         console.log("this is happening1");
-        $.post("/generateMultipleReference", { "users": data }, function(receiptData) {
+        $.post("/generateMultipleReference", { "count": data }, function(receiptData) {
             console.log(receiptData);
             showReceipts(receiptData);
         });
@@ -59,21 +58,23 @@ $(document).ready(function() {
     JsonObj = null;
 
     function handleFileSelect(evt) {
-        var files = evt.target.files; // FileList object
-        f = files[0];
-        var reader = new FileReader();
+        var count = document.getElementById('count').value; // FileList object
+        fetchId(count);
+        // console.log(count);
+        // f = files[0];
+        // var reader = new FileReader();
 
-        // Closure to capture the file information.
-        reader.onload = (function(theFile) {
-            return function(e) {
-                // Render thumbnail.
-                JsonObj = JSON.parse(e.target.result);
-                fetchId(JsonObj);
-            };
-        })(f);
+        // // Closure to capture the file information.
+        // reader.onload = (function(theFile) {
+        //     return function(e) {
+        //         // Render thumbnail.
+        //         JsonObj = JSON.parse(e.target.result);
+        //         fetchId(JsonObj);
+        //     };
+        // })(f);
 
-        // Read in the image file as a data URL.
-        reader.readAsText(f);
+        // // Read in the image file as a data URL.
+        // reader.readAsText(f);
     }
-    document.querySelector('.jsonFile').addEventListener('change', handleFileSelect, false);
+    document.getElementById('generate').onclick=handleFileSelect;
 });
