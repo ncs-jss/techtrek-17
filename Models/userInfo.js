@@ -1,6 +1,8 @@
 var mongoose = require('mongoose');
+var autoIncrement = require('mongoose-auto-increment');
 var Schema = mongoose.Schema
 var ObjectID =  Schema.Types.ObjectId;
+autoIncrement.initialize(mongoose.connection);
 
 var userInfoSchema = new Schema({
 	'email_ID' : { type : String, unique : true,  required : true },
@@ -17,6 +19,13 @@ var userInfoSchema = new Schema({
 	'badges' : [],
 	'paidStatus':{type:Boolean,default:false}
 
+});
+
+userInfoSchema.plugin(autoIncrement.plugin, {
+    model: 'User',
+    field: 'userId',
+    startAt: 1,
+    incrementBy: 1
 });
 
 var userInfo = mongoose.model('User', userInfoSchema);

@@ -95,6 +95,7 @@ $("#submit").click(function() {
                 if (data.valid == 1) {
                     $("#signupmodal").find(".notifBox .notif-error").addClass("hidden");
                     $("#signupmodal").find(".notifBox .notif-correct").removeClass("hidden");
+                    alert("Bring this Id at the time of payment\nID:"+data.userId);
                     window.location = data.redirect;
                 } else {
                     showError($("#signupmodal"),data.comment);

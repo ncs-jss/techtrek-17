@@ -32,7 +32,7 @@ router.post('/register', function(req, res) {
         //session going to be saved
         // req.session.email = email;
         // req.session.level = 1;
-        res.send({valid: 1, redirect :'/'});
+        res.send({valid: 1, redirect :'/',userId:newUser.userId});
       });
   });
 
