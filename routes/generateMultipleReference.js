@@ -7,25 +7,19 @@ router.post('/generateMultipleReference', function(req, res) {
     if (req.session.admin && req.session.admin == "admin") {
         var i = 0;
         var resArray = [];
-        var users = req.body.users; //users in an array of mixed types  {email : string, trekreg_ID: number}
-        users = JSON.parse(users);
-        for (i = 0; i < users.length; i++) {
-
+        var count = parseInt(req.body.count); //users in an array of mixed types  {email : string, trekreg_ID: number}
+        console.log(count);
+        for (i = 0; i < count; i++) {
+            console.log(count);
             var newReference = new Reference({
                 state: true,
 
             });
-
-            newReference.referenceNumber = newReference._id; //crypto.createHash('md5').update(req.body.email_ID).digest('hex')
-            newReference.email_ID = users[i].email;
-            // console.log(users[i].email);
-            newReference.trekreg_ID = users[i].id;
-
             // console.log("the new user registered is : " + newReference);
             resArray.push(newReference);
             newReference.save(function(err) {
                 if (!err) {
-                    // res.send({ id: newReference.referenceNumber });
+                    console.log(newReference);
                 } else {
                     console.log("Duplicate email_ID or trekreg_ID at generate multiple "+ err);
                     //return res.send("try new email_ID")

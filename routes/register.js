@@ -11,9 +11,6 @@ router.post('/register', function(req, res) {
 
   var referenceNo = req.body.referenceNo;
   console.log(referenceNo)
-  if((referenceNo.length != 24) )
-    return res.send({valid : 0, comment:"*Invalid Reference No", type:"referenceNo"});
-
   Reference.findOne({'referenceNumber' : referenceNo, state : true }).exec(function(err, result){
     console.log(result);
 
@@ -22,9 +19,6 @@ router.post('/register', function(req, res) {
       return console.log(err);
 
     if(result) {
-      if(result.email_ID != req.body.email)
-        return res.send({valid: 0 ,comment :"*Email is not corresponding to Reference Number", type: "email"});
-
       var email = req.body.email;
       var mobileNumber = req.body.mobileNumber;
       var password = req.body.password;
