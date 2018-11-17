@@ -17,6 +17,9 @@ var userInfoSchema = new Schema({
 	'lastAttemptTime' : { type :Date },
 	'badges' : []
 
+},
+{
+  usePushEach: true
 });
 
 var userInfo = mongoose.model('User', userInfoSchema);

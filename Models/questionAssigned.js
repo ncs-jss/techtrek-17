@@ -9,7 +9,10 @@ var questionAssignedSchema = new Schema({
 	timeOfCompletion : { type : Date },
 	duration : Number,
 	level : Number
-	});
+	},
+	{
+  usePushEach: true
+});
 
 var questionAnswered = mongoose.model('QuestionAssigned',  questionAssignedSchema);
 module.exports = questionAnswered;

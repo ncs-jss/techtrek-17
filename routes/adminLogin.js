@@ -14,8 +14,8 @@ router.post('/adminLogin', function(req, res, next) {
 //  console.log(password);
 var user = process.env.ADMIN_USER;
 var pass = process.env.ADMIN_PASS;
-user="admin@gmail.com";
-pass="admin";
+// user="admin@gmail.com";
+// pass="admin";
   if (id == user && password == pass){
    req.session.admin = "admin";
 	 return res.send({'valid' : 1, 'redirect' : '/admin'});
