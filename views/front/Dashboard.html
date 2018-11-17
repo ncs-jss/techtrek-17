@@ -88,7 +88,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-12 notifBox">
-                        <div class="notif notif-error hidden">
+                        <div class="notif notif-error hidden" style="color: #fff;">
                         </div>
                         <div class="notif notif-correct hidden">
                             <strong> My Dear Holmes </strong> ! You're Right.
@@ -163,7 +163,7 @@
     -->
     <audio id="correct" src="/sounds/winner.mp3" type="audio/mpeg">
     </audio>
-    <audio id="audio" autoplay="true" loop="true" src="/sounds/gameplay.mp3" type="audio/mpeg">
+    <audio id="audio" autoplay="true" loop="true" src="/sounds/bg_audio.mp3" type="audio/mpeg">
     </audio>
     <script src="/js/Dashboard.js"></script>
     <script src="/js/circle.js"></script>
@@ -172,7 +172,7 @@
     $(document).ready(function() {
         $("#audio")[0].load();
         $("#audio")[0].play();
-        $("#audio")[0].volume = 0.6;
+        $("#audio")[0].volume = 1;
     });
 
     function mute() {

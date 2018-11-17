@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tech-Trek || NCS</title>
+    <style type="text/css">
+      body {
+  margin: 0;
+  box-sizing: border-box;
+  overflow-y: hidden;
+}
+@font-face {
+    font-family: Gilroy;
+    src: url(/img/Gilroy-ExtraBold.otf);
+}
+@font-face {
+    font-family: GilroyLight;
+    src: url(/img/Gilroy-Light.otf);
+}
+#home {
+  background-color: #e7123a;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.coming_soon {
+  color: #fff;
+  font-size: 40px;
+  font-family: GilroyLight;
+  z-index: 1;
+  letter-spacing: 5px;
+}
+.logo {
+  width: 20%;
+  z-index: 1;
+}
+.back {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+}
+.left {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  width: 100px;
+}
+.right {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  width: 100px;
+}
+.top {
+  top: 10px;
+  position: fixed;
+  width: 300px;
+}
+.text {
+  color: #fff;
+  font-family: GilroyLight;
+  z-index: 1;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: -10px;
+
+}
+.link {
+  color: #fff;
+  z-index: 1;
+  font-family: GilroyLight;
+  font-size: 24px;
+}
+a {
+  z-index: 1;
+  text-decoration: none;
+  color: #fff;
+  font-family: Gilroy;
+}
+@media only screen and (max-width: 1000px) {
+    .logo {
+        width: 60%;
+    }
+   
+    .back {
+      transform: scale(1.7);
+      bottom: 140px;
+    }
+    .top {
+      width: 500px;
+    }
+    .left {
+      width: 200px;
+    }
+    .right {
+      width: 200px;
+    }
+    .text {
+      font-size: 24px!important;
+    }
+}
+    </style>
+  </head>
+  <body>
+    <audio src="/img/bg_audio.mp3" autoplay="true" volume="0.7" loop="true"></audio>
+
+    <img src="/img/background.png" class="back">
+    <img src="/img/left.png" class="left">
+    <img src="img/right.png" class="right">
+    <div id="home">
+      <img src="img/top.png" class="top">
+      <img src="img/logo.png" class="logo">
+      <h1 class="coming_soon">19 NOVEMBER - 21 NOVEMBER</h1>
+      <p class="text"> Keep your Reference ID with you. Online registration starts soon.</h4>
+        <p class="link">For any query contact us at: <a href="https://www.facebook.com/nibblecomputersociety" target="_blank">Forum</a></p>
+    </div>
+  </body>
+</html>

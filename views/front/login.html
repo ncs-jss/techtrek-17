@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
-    <title>Tech-Trek|Login-Signup</title>
+    <title>Tech-Trek | Login-Signup</title>
     <!-- Bootstrap core CSS -->
     <link href="/css/animate.min.css" rel="stylesheet">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -26,23 +26,27 @@
     }
     
     body {
-        overflow-x: hidden;
+        overflow-x: hidden!important;
     }
-    
+
     .techtrekFooter {
         margin-top: 30px;
         padding: 20px 0;
         /*margin-left: -15px;*/
         /*margin-right: -15px;*/
+        text-transform: uppercase;
         position: absolute;
         width: 100%;
         bottom: 0;
         /*background: rgba(0, 0, 0, 0.2);*/
-        background: #373738;
+        background: #331203;
+        z-index: 1;
+        /*border-top: 2px solid #fff;*/
+        font-family: Gilroy;
     }
     
     .footerText {
-        vertical-align: middle;
+        /*vertical-align: middle;*/
         color: #fff;
         font-size: 14px;
         line-height: 20px;
@@ -65,8 +69,52 @@
         margin: 0;
         width: 100%;
     }
+    .login_image {
+        height: 180px;
+        margin-left: 80px;
+        -webkit-transition-property: all;
+      -webkit-transition-duration: 0.1s;
+      -webkit-transition-timing-function: ease;
+    }
+  
+    .signup_image {
+        height: 180px;
+        margin-left: 80px;
+        -webkit-transition-property: all;
+      -webkit-transition-duration: 0.1s;
+      -webkit-transition-timing-function: ease;
+    }
+    .svg_image {
+        margin-top: -100px;
+        height: 100%;
+        width: 100%;
+        
+    }
+    #login-btn:hover ,#signup-btn:hover {
+        cursor: pointer;
+    }
+    .cls-5 {
+        font-family: Gilroy;
+    }
+    .cls-6 {
+        font-family: Gilroy;
+    }
     
-    @media screen and (max-width:400px) {
+    
+    @media screen and (max-width:768px) {
+        .login_image {
+            margin-left: -50px;
+            height: 150px;
+            margin-top: 10px;
+        }
+        .signup_image {
+            margin-left: 50px;
+            height: 150px;
+        }
+        .svg_image {
+           margin-top: 23.5vh;
+            width: 80vw;
+        }
         .footerText {
             font-size: 10px;
         }
@@ -81,42 +129,55 @@
 </head>
 <!-- body starts-->
 
-<body class="loginbody">
+<body>
     <!-- Element styling starts here-->
-    <div class="container xsflexBox">
+    <div class="container xsflexBox loginbody">
         <div class="row pos-top">
-            <div class="col-sm-12 col-md-2">
-                <a href="/"><img src="/img/ttlogo_new.png" class="animated bounceIn" style="padding-top:10px; float: right;"></a>
+            <div class="col-sm-12 col-md-3 text-center">
+                <a href="/"><img src="/img-misaki/ttlogo.png" class="animated bounceIn"  style="padding-top:10px;  height: 130px;"></a>
+            </div>
+            <div class="col-sm-12 col-md-4 col-md-offset-1 text-center hidden-xs">
+                <img src="/img-misaki/2.png" style="height: 150px;">
             </div>
         </div>
-        <div class="row hidden-xs">
-            <div class="col-sm-12 col-md-3 col-md-offset-9 animated slideInRight">
-                <img src="/img/planets.png" class="img-responsive">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-7 col-md-offset-5 ">
-                <a href="#" data-toggle="modal" data-target="#signupmodal" class="checkModal1"><img src="/img/signup.png" style="text-align:center;height:70px; width:200px;"></a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 hidden-xs">
-                <img src="/img/meteor.png" class="animated slideInLeft" style="margin-bottom:40px;">
-            </div>
-            <div class="col-md-3 col-md-offset-1">
-                <a href="#" data-toggle="modal" data-target="#loginmodal" class="checkModal2"><img src="/img/login.png" style="margin-top:15px;margin-bottom:30px ;height:70px; width:200px;"></a>
-            </div>
+        <div class="row" style="margin-top: 50px;">
             <div class="col-md-3 col-md-offset-2 hidden-xs">
-                <img class="animated bounceIn" src="/img/astronaut.png" style="margin-top:50px">
+                <img src="/img-misaki/meteor.png" style="width: 60%" class="animated slideInLeft">
+
+            </div>
+            <div class="col-md-3  ">
+                <!-- <a href="#" data-toggle="modal" data-target="#signupmodal" class="checkModal1"><img src="/img-misaki/signup.png" class="animated slideInDown signup_image"></a> -->
+            </div>
+            <div class="col-sm-12 col-md-3  animated slideInRight hidden-xs">
+                <img src="/img-misaki/planets.png" class="img-responsive">
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-3 col-md-offset-1 hidden-xs">
+                <img src="/img-misaki/meteor.png" class="animated slideInLeft">
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="svg_image">
+                <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 400"><defs><style>.cls-1{fill:#321200;}.cls-2{fill:#fff200;}.cls-3{fill:none;stroke:#fff200;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}.cls-4,.cls-7{opacity:0.2;fill:#c5122f;font-family:MicrosoftYaHei-Bold, Microsoft YaHei;font-weight:700;}.cls-4{font-size:20px;}.cls-5,.cls-8{font-size:32px;font-family:Gilroy-ExtraBold, Gilroy-ExtraBold;}.cls-5{letter-spacing:-0.01em;}.cls-6{letter-spacing:0.02em;}.cls-7{font-size:19.97px;}.cls-8{letter-spacing:0.02em;}</style></defs><title></title><g id="Layer_2" data-name="Layer 2"><g id="gateway"><path id="gate" class="cls-1" d="M444.47,89.6s4.58,0,4.58-8.22V58.05h25.82l18.2-18,21.71-1.47L550,0S378.22,16.38,275,16.47C171.78,16.38,0,0,0,0L35.22,38.54,56.93,40l18.2,18H101V81.38c0,8.22,4.58,8.22,4.58,8.22,0,9.41,6.38,9.41,6.38,9.41v13.65L98.6,106.39v6.27H53.21V137h58.7L100.17,358.84l-5.69.13-2.92,41h46.36V359h-7.33l7.33-222.38H412.08L419.41,359h-7.33v41h46.36l-2.92-41-5.69-.13L438.09,137h58.7V112.66H451.4v-6.27l-13.31,6.27V99S444.47,99,444.47,89.6Zm-34,22-13-5.29-.15,6.47H291V84.42H259v28.39H152.6l-.15-6.47-13,5.29V99s7.44,0,7.44-9.41c0,0,6.26,0,6.26-8.22V58.24H396.81V81.38c0,8.22,6.26,8.22,6.26,8.22,0,9.41,7.44,9.41,7.44,9.41Z"/><g id="login-btn" data-toggle="modal" data-target="#loginmodal" class="checkModal2"><path class="cls-2" d="M371.72,226s-55.05,3.27-96.72,3.27S178.31,226,178.31,226V173.38s44.92,1.37,98.39,1.37,95-1.37,95-1.37Z"/><path class="cls-3" d="M413.18,170c-41.33,6.08-235,6.47-276.38.39"/><text class="cls-4" transform="translate(266.7 196.75)">登<tspan x="0" y="22">录</tspan></text><text class="cls-5" transform="translate(227.73 211.66)"><tspan class="cls-6" x="0" y="0">LOGIN</tspan></text></g><g id="signup-btn" data-toggle="modal" data-target="#signupmodal" class="checkModal1"><path class="cls-2" d="M371.72,316s-55.05,3.27-96.72,3.27S178.31,316,178.31,316V263.37s44.92,1.37,98.39,1.37,95-1.37,95-1.37Z"/><path class="cls-3" d="M416.15,260c-41.34,6.08-241,6.47-282.31.39"/><text class="cls-7" transform="translate(266.69 286.79)">注<tspan x="0" y="21.97">册</tspan></text><text class="cls-8" transform="translate(217.84 301.66)"><tspan class="cls-6" x="0" y="0">SIGNUP</tspan></text></g></g></g></svg>
+            </div>
+            </div>
+            <div class="col-md-2 col-md-offset-1 hidden-xs">
+                <img class="animated bounceIn" src="/img-misaki/astronaut.png" style="margin-top:50px">
+            </div>
+        </div>
+    </div>
         <footer class="footer techtrekFooter">
             <div class="container">
-                <span class="footerText pull-left">Developed By <a target="_blank" href="http://hackncs.com"><strong>Nibble Computer Society</strong></a></span>
-                <span class="footerText pull-right">Alumni's & Faculty, visit :<a target="_blank" href="https://www.facebook.com/nibblecomputersociety"><strong>Forum</strong></a> for trekking</span>
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                <span class="footerText">DEVELOPED BY <a target="_blank" href="http://hackncs.com"><strong>Nibble Computer Society</strong></a></span>
+            </div>
+            <div class="col-md-offset-4 col-md-4 text-center">
+                <span class="footerText">Alumni's & Faculty, visit :<a target="_blank" href="https://www.facebook.com/nibblecomputersociety"><strong>Forum</strong></a> for trekking</span>
+            </div>
+            </div>
             </div>
         </footer>
-    </div>
     <!-- elements styling ends here-->
     <!--Modal for signup starts here-->
     <div class="modal fade" id="signupmodal">
@@ -124,7 +185,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h2 id="Form" class="modal-title">Signup</h2>
+                    <h2 id="Form" class="modal-title">Sign up</h2>
                     <!-- <h4 class="modal-title">Modal Header</h4> -->
                 </div>
                 <div id="container_ls" class="container">
@@ -172,11 +233,11 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-5 col-sm-offset-1">
                                     <label id="yearLabel" class="errorShow"></label>
-                                    <input placeholder="Year" type="number" min="0" max="4" name="year" class="form-control" id="year" />
+                                    <input placeholder="Year" type="number" min="1" max="4" name="year" class="form-control" id="year" />
                                 </div>
-                                <div class="col-xs-11" data-toggle="tooltip" title="is alphanumeric!" data-placement="left">
+                                <div class="col-xs-11" data-toggle="tooltip" title="reference Id!" data-placement="left">
                                     <label id="referenceLabel" class="errorShow"></label>
-                                    <input placeholder="Reference No." pattern="[a-zA-Z0-9]{40}" type="text" name="referenceNo" class="form-control" id="referenceNo" />
+                                    <input placeholder="Reference No."  type="text" name="referenceNo" class="form-control" id="referenceNo" />
                                 </div>
                                 <div class="col-xs-12 col-sm-5 col-sm-offset-0 icon-cont" data-toggle="tooltip" title="Must be Cool" data-placement="left">
                                     <label id="passLabelRegister" class="errorShow"></label>
@@ -201,7 +262,7 @@
                             </div>
                         </div>
                     </form>
-                    <div class="row modal-footer">
+                    <div class="row modal-footer" style="border: none;">
                         <div class="col-xs-12 col-sm-8 notifBox">
                             <div class="notif notif-error hidden">
                                 <strong>Something's Wrong</strong> , Trekker !.
@@ -211,7 +272,7 @@
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-4">
-                            <button name="submit" id="submit" class="btn btn-default">Sign Up</button>
+                            <button name="submit" id="submit" class="btn btn-default btn-lg"><b>Sign Up</b></button>
                         </div>
                     </div>
                 </div>
@@ -248,17 +309,17 @@
                             </div>
                         </div>
                     </form>
-                    <div class="row modal-footer">
+                    <div class="row modal-footer" style="border: none;">
                         <div class="col-xs-12 col-sm-8 notifBox">
                             <div class="notif notif-error hidden">
                                 <strong>Something's Wrong </strong> , Trekker !.
                             </div>
                             <div class="notif notif-correct hidden">
-                                <strong>Welcome ! </strong> to Tech-Trek.
+                                <strong>Welcome! </strong> to Tech-Trek.
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-4">
-                            <button name="submit" id="login" class="btn btn-default">Login</button>
+                            <button name="submit" id="login" class="btn btn-default btn-lg"><b>Login</b></button>
                         </div>
                     </div>
                 </div>

@@ -1,10 +1,10 @@
 body {
-    background-image: url('../img/Techtrek.jpg');
+    background-image: url('../img-misaki/techtrek2.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-position: center;
     height: 100%;
-    width: 100%;
     overflow-x: hidden;
 }
 
@@ -79,6 +79,9 @@ a{
     padding: 20px 0;
     /*background: rgba(0, 0, 0, 0.2);*/
     background: black;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
 }
 .footerText{
     color: #fff;
@@ -97,7 +100,7 @@ a{
 }
 
 .box {
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0,0,0,0.6);
     border: none;
     border-radius: 8px;
     padding: 20px 30px;
@@ -116,7 +119,7 @@ a{
 @media (max-width:767px) {
     .box {
         font-size: 12px;
-        height: 350px;
+        height: 400px;
     }
     .dropdown {
         float: left;
@@ -252,7 +255,7 @@ a{
 /** Modal styling ends here**/
 
 .trekNav {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0,0,0,0.6);
 }
 
 .trekNav img {
@@ -265,7 +268,7 @@ a{
     float: left;
     padding-top: 25px;
     padding-left: 19px;
-    font-size: 30px;
+    font-size: 24px;
 }
 
 .trekNav li a {
@@ -277,7 +280,7 @@ a{
 
 .trekNav li a:hover,.trekNav li a:focus {
     color: #fff;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(51, 18, 3, 0.5)
 }
 
 @media screen and (min-width: 768px) {
@@ -303,8 +306,8 @@ a{
         margin-bottom: 20px;
     }
     .userName {
-        font-size: 13px;
-        line-height: 63px;
+        font-size: 20px;
+        
     }
 }
 

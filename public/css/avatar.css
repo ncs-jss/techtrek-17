@@ -33,7 +33,7 @@ input[type="radio"]:checked + .avatar {
     -webkit-transform: scale(0.9);
             transform: scale(0.9);
     /*border: 1px solid #fff;*/
-    box-shadow: 0px 0px 0px 10px rgba(255,255,255,0.2);
+    box-shadow: 0px 0px 0px 10px rgba(255,255,255,0.9);
 }
 .avatar{
     width: 70px;
@@ -47,22 +47,22 @@ input[type="radio"]:checked + .avatar {
     transition: 0.4s;
 }
 input[value="0"]+.avatar{
-    background-image: url("../img/avatars/0.png");
+    background-image: url("../img-misaki/avatars/0.png");
 }
 input[value="1"]+.avatar{
-    background-image: url("../img/avatars/1.png");
+    background-image: url("../img-misaki/avatars/1.png");
 }
 input[value="2"]+.avatar{
-    background-image: url("../img/avatars/2.png");
+    background-image: url("../img-misaki/avatars/2.png");
 }
 input[value="3"]+.avatar{
-    background-image: url("../img/avatars/3.png");
+    background-image: url("../img-misaki/avatars/3.png");
 }
 input[value="4"]+.avatar{
-    background-image: url("../img/avatars/4.png");
+    background-image: url("../img-misaki/avatars/4.png");
 }
 input[value="5"]+.avatar{
-    background-image: url("../img/avatars/5.png");
+    background-image: url("../img-misaki/avatars/5.png");
 }
 
 
