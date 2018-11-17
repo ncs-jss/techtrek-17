@@ -5,17 +5,13 @@ var User = require('../Models/userInfo');
 router.get('/', function(req, res) {
 
  // remove code below to make things live
-
-  
-
-
 	console.log(req.session.email);
   if(req.session.email && req.session.email != "") {
     // return res.redirect('/finish');
   User.find({email_ID :req.session.email}).exec(function(err,result){
 		//console.log('reached request');
   		if(result)
-      res.sendFile('/views/front/Dashboard.html',{root : '.'});
+      res.sendFile('/views/front/dashboard.html',{root : '.'});
 
   	else
   		req.session.destroy(function(err) {

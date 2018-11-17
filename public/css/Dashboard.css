@@ -1,5 +1,5 @@
 body {
-    background-image: url('../img/main_login.jpg');
+    background-image: url('../img-misaki/techtrek2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Milk';
@@ -100,18 +100,20 @@ h1 {
     padding: 17px 15px;
     margin-top: 20px;
     border: none;
-    color: #fade20;
+    color: #fff;
     border-radius: 4px;
     width: 100%;
     -webkit-transition: .6s;
     transition: .6s;
+    font-weight: bold;
 }
 
 .ans input:focus {
     background: rgba(0, 0, 0, 0.3);
     border: none;
-    color: #fade20;
+    color: #fff;
     outline: none;
+    font-weight: bold;
 }
 
 .submit_btn button {
@@ -181,7 +183,7 @@ h1 {
         font-size: 13px;
     }
     .submit_btn button {
-        background: #fade20;
+        background:#373738;
         padding: 12px 8px;
         font-size: 12px;
         margin-bottom: 20px;

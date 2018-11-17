@@ -6,7 +6,7 @@ $(document).ready(function() {
             var allHtml;
             for (var i = 0, l = data.length; i < l; i++) {
                 allHtml = '';
-                allHtml += '<td class="table-img"><img src="img/avatars/' + data[i].avatar + '.png"></td>\n';
+                allHtml += '<td class="table-img"><img src="img-misaki/avatars/' + data[i].avatar + '.png"></td>\n';
                 allHtml += '<td class="pad"><span class="table-name text-right">' + data[i].name + '</span><br><span class="table-id text-right">' + data[i].email_ID + '</span></td>';
                 allHtml += '<td class="table-score"><span>' + data[i].score + '</span></td>\n';
                 allHtml = '<tr>' + allHtml + '</tr>';
