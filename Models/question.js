@@ -8,6 +8,9 @@ var questionSchema = new Schema({
 	technicalAnswer : { type : String, trim : true, lowercase: true },
 	nonTechnicalAnswer : { type : String, trim : true, lowercase: true },
 	level : { type : Number, required : true }
+},
+{
+  usePushEach: true
 });
 
 var  question = mongoose.model('Question', questionSchema );

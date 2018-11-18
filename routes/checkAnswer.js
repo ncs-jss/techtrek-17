@@ -36,6 +36,7 @@ router.post('/checkAnswer', function(req, res) {
 						var badgeWon = false;
 
 						question.find({level : result.level}).exec(function (err, multi) {
+							console.log(multi);
 							if(multi.length>1)
 								badgesCouldBeWon = true
 
@@ -46,8 +47,7 @@ router.post('/checkAnswer', function(req, res) {
 							 if(isAnswered.length==0) {
 							 	var badgeWon = true;
 							 	}
-
-
+							 	console.log(badgeWon);
 								if(answerByUser == result.question_ID.technicalAnswer) {
 									console.log("technicalAnswer Matched");
 									user.findOne({email_ID : req.session.email}, function(err, data) {

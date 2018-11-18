@@ -11,7 +11,7 @@ router.get('/', function(req, res) {
   User.find({email_ID :req.session.email}).exec(function(err,result){
 		//console.log('reached request');
   		if(result)
-      res.sendFile('/views/front/dashboard.html',{root : '.'});
+      res.sendFile('/views/front/Dashboard.html',{root : '.'});
 
   	else
   		req.session.destroy(function(err) {
