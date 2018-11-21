@@ -14,11 +14,8 @@
 
 .loginbody {
     font-family: "LemonMilk";
-    background-image: url('../img-misaki/main_login.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 93vh;
+    height: 100vh;
+    background-color: #e7123a;
 }
 
 .form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
